@@ -11,11 +11,9 @@ on:
     - cron: '0 11 1 * *'
 jobs:
   NextGen-Static-Analysis:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-23.10
     steps:
     - uses: actions/checkout@v3
-    - name: PiP
-      run: pip3 install --user -r requirements.txt
     - name: Download Qwiet CLI
       run: |
         curl https://cdn.shiftleft.io/download/sl > ${GITHUB_WORKSPACE}/sl && chmod a+rx ${GITHUB_WORKSPACE}/sl
