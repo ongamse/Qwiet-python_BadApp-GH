@@ -21,7 +21,7 @@ jobs:
         pip3 install --user -r requirements.txt
 
         ${GITHUB_WORKSPACE}/sl --version
-        ${GITHUB_WORKSPACE}/sl analyze --strict --wait \
+        SHIFTLEFT_SBOM_GENERATOR=1 ${GITHUB_WORKSPACE}/sl analyze --strict --wait \
           --app Qwiet-python_badapp-GH \
           --tag branch=${{ github.head_ref }} \
          
